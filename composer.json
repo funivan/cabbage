@@ -1,0 +1,10 @@
+{
+    "name": "funivan/cabbage",
+    "authors": [
+        {
+            "name": "Ivan Shcherbak",
+            "email": "alotofall@gmail.com"
+        }
+    ],
+    "require": {}
+}
