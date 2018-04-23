@@ -4,18 +4,6 @@ php:
   - 7.1
   - 7.2
 
-env:
-  - COVERAGE=on
-  - COVERAGE=off
-
-matrix:
-  fast_finish: true
-  exclude:
-    - php: 7.0
-      env: COVERAGE=on
-    - php: 7.1
-      env: COVERAGE=off
-
 before_script:
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source --dev
