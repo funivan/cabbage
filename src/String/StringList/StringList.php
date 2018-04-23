@@ -21,7 +21,7 @@
     /**
      * @return string[]|\Generator
      */
-    public function all(): \Generator {
+    final public function all(): \Generator {
       yield from $this->items;
     }
   }
