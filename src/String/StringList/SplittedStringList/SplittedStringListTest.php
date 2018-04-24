@@ -1,6 +1,6 @@
 <?php
 
-  namespace Funivan\Cabbage\String\StringList\SplittedStringList;
+  namespace Funivan\CabbageCore\String\StringList\SplittedStringList;
 
   use PHPUnit\Framework\TestCase;
 

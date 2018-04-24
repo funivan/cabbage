@@ -1,8 +1,8 @@
 <?php
 
-  namespace Funivan\Cabbage\String\StringList\CompositeStringList;
+  namespace Funivan\CabbageCore\String\StringList\CompositeStringList;
 
-  use Funivan\Cabbage\String\StringList\StringList;
+  use Funivan\CabbageCore\String\StringList\StringList;
   use PHPUnit\Framework\TestCase;
 
   class CompositeStringListTest extends TestCase {

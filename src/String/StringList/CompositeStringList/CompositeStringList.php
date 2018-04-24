@@ -2,9 +2,9 @@
 
   declare(strict_types=1);
 
-  namespace Funivan\Cabbage\String\StringList\CompositeStringList;
+  namespace Funivan\CabbageCore\String\StringList\CompositeStringList;
 
-  use Funivan\Cabbage\String\StringList\StringListInterface;
+  use Funivan\CabbageCore\String\StringList\StringListInterface;
 
   class CompositeStringList implements StringListInterface {
 

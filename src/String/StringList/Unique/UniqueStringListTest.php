@@ -2,9 +2,9 @@
 
   declare(strict_types=1);
 
-  namespace Funivan\Cabbage\String\StringList\Unique;
+  namespace Funivan\CabbageCore\String\StringList\Unique;
 
-  use Funivan\Cabbage\String\StringList\StringList;
+  use Funivan\CabbageCore\String\StringList\StringList;
   use PHPUnit\Framework\TestCase;
 
   class UniqueStringListTest extends TestCase {

@@ -1,6 +1,6 @@
 <?php
 
-  namespace Funivan\Cabbage\String\StringList;
+  namespace Funivan\CabbageCore\String\StringList;
 
   use PHPUnit\Framework\TestCase;
 

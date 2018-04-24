@@ -2,7 +2,7 @@
 
   declare(strict_types=1);
 
-  namespace Funivan\Cabbage\String\StringList;
+  namespace Funivan\CabbageCore\String\StringList;
 
   interface StringListInterface {
 

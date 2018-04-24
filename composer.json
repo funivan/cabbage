@@ -1,5 +1,5 @@
 {
-    "name": "funivan/cabbage",
+    "name": "funivan/cabbage-core",
     "authors": [
         {
             "name": "Ivan Shcherbak",
@@ -8,7 +8,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Funivan\\Cabbage\\" : "src/"
+            "Funivan\\CabbageCore\\" : "src/"
         }
     },
     "require":{

@@ -2,7 +2,7 @@
 
   declare(strict_types=1);
 
-  namespace Funivan\Cabbage\String;
+  namespace Funivan\CabbageCore\String\StringObject;
 
   interface StringInterface {
 

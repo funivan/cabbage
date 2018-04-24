@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/funivan/cabbage.svg?branch=master)](https://travis-ci.org/funivan/cabbage)
+[![Build Status](https://travis-ci.org/funivan/cabbage-core.svg?branch=master)](https://travis-ci.org/funivan/cabbage-core)
