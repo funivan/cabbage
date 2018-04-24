@@ -2,7 +2,7 @@
 
   declare(strict_types=1);
 
-  namespace Funivan\CabbageCore\String\StringModfier;
+  namespace Funivan\CabbageCore\String\StringModifier;
 
   interface StringModifierInterface {
 
