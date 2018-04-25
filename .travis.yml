@@ -10,7 +10,7 @@ before_script:
 
 script:
   - ./vendor/bin/php-cs-fixer fix --config=.php_cs_config.php -v --dry-run --stop-on-violation --using-cache=no
-  - ./vendor/bin/phpunit src/ --coverage-clover=build/coverage.clove
+  - ./vendor/bin/phpunit src/ --coverage-clover=build/coverage.clover
 
 after_script:
   - if [ $(phpenv version-name) == "7.1" ]; wget https://scrutinizer-ci.com/ocular.phar -O build/ocular.phar ; fi
