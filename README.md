@@ -4,3 +4,12 @@
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/funivan/cabbage-core.svg?style=flat-square)](https://scrutinizer-ci.com/g/funivan/cabbage-core/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/funivan/cabbage-core.svg?style=flat-square)](https://scrutinizer-ci.com/g/funivan/cabbage-core)
 [![Total Downloads](https://img.shields.io/packagist/dt/funivan/cabbage-core.svg?style=flat-square)](https://packagist.org/packages/funivan/cabbage-core)
+
+# Cabbage Core
+
+**ATTENTION**: We're in a very early alpha version, 
+the API may and will change frequently. 
+
+## Installation
+
+`composer require funivan/cabbage-core:dev-master`

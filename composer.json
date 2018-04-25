@@ -1,5 +1,7 @@
 {
     "name": "funivan/cabbage-core",
+    "type": "library",
+    "description": "Object oriented approach for the primitive types in PHP",
     "license": "MIT",
     "authors": [
         {
