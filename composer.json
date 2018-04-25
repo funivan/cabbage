@@ -1,5 +1,6 @@
 {
     "name": "funivan/cabbage-core",
+    "license": "MIT",
     "authors": [
         {
             "name": "Ivan Shcherbak",
