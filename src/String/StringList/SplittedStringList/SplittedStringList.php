@@ -1,12 +1,13 @@
 <?php
 
-  declare(strict_types=1);
+declare(strict_types=1);
 
-  namespace Funivan\CabbageCore\String\StringList\SplittedStringList;
+namespace Funivan\CabbageCore\String\StringList\SplittedStringList;
 
-  use Funivan\CabbageCore\String\StringList\StringListInterface;
+use Funivan\CabbageCore\String\StringList\StringListInterface;
 
-  class SplittedStringList implements StringListInterface {
+class SplittedStringList implements StringListInterface
+{
 
 
     /**
@@ -20,17 +21,19 @@
     private $input;
 
 
-    public function __construct(string $pattern, string $input) {
-      $this->pattern = $pattern;
-      $this->input = $input;
+    public function __construct(string $pattern, string $input)
+    {
+        $this->pattern = $pattern;
+        $this->input = $input;
     }
 
 
     /**
      * @return string[]|\Generator
      */
-    public function all(): \Generator {
-      $result = preg_split($this->pattern, $this->input);
-      yield from $result;
+    public function all(): \Generator
+    {
+        $result = preg_split($this->pattern, $this->input);
+        yield from $result;
     }
-  }
+}
