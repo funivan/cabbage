@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class IntObjectTest extends TestCase
 {
-
     public function testValue(): void
     {
         self::assertSame(
