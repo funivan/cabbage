@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class ListSizeTest extends TestCase
 {
-    public function testValue()
+    public function testValue(): void
     {
         self::assertSame(
             3,

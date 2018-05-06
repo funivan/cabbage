@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Int\IntObject;
 
-class IntObject implements IntInterface
+class PredefinedInt implements IntInterface
 {
 
     /**
