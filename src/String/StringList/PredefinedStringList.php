@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\String\StringList;
 
-class StringList implements StringListInterface
+class PredefinedStringList implements StringListInterface
 {
 
 

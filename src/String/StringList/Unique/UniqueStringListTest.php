@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\String\StringList\Unique;
 
-use Funivan\CabbageCore\String\StringList\StringList;
+use Funivan\CabbageCore\String\StringList\PredefinedStringList;
 use PHPUnit\Framework\TestCase;
 
 class UniqueStringListTest extends TestCase
@@ -14,7 +14,7 @@ class UniqueStringListTest extends TestCase
         self::assertSame(
             ['a', 'b', 'c'],
             iterator_to_array(
-                (new UniqueStringList(new StringList('a', 'b', 'a', 'c')))->all()
+                (new UniqueStringList(new PredefinedStringList('a', 'b', 'a', 'c')))->all()
             )
         );
     }

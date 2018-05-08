@@ -2,7 +2,7 @@
 
 namespace Funivan\CabbageCore\String\StringList\Combined;
 
-use Funivan\CabbageCore\String\StringList\StringList;
+use Funivan\CabbageCore\String\StringList\PredefinedStringList;
 use PHPUnit\Framework\TestCase;
 
 class CombinedStringListTest extends TestCase
@@ -12,7 +12,7 @@ class CombinedStringListTest extends TestCase
         self::assertSame(
             ['a', 'b'],
             iterator_to_array(
-                (new CombinedStringList(new StringList('a'), new StringList('b')))->all()
+                (new CombinedStringList(new PredefinedStringList('a'), new PredefinedStringList('b')))->all()
             )
         );
     }

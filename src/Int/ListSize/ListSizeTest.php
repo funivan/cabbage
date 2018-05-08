@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Int\ListSize;
 
-use Funivan\CabbageCore\String\StringList\StringList;
+use Funivan\CabbageCore\String\StringList\PredefinedStringList;
 use PHPUnit\Framework\TestCase;
 
 class ListSizeTest extends TestCase
@@ -12,7 +12,7 @@ class ListSizeTest extends TestCase
     {
         self::assertSame(
             3,
-            (new ListSize(new StringList('1', '2', '3')))->value()
+            (new ListSize(new PredefinedStringList('1', '2', '3')))->value()
         );
     }
 }
