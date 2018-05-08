@@ -6,7 +6,6 @@ use PHPUnit\Framework\TestCase;
 
 class PredefinedStringTest extends TestCase
 {
-
     public function testValue()
     {
         self::assertSame(
