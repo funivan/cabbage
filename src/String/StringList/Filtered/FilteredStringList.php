@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Funivan\CabbageCore\String\StringList\FilteredStringList;
+namespace Funivan\CabbageCore\String\StringList\Filtered;
 
-use Funivan\CabbageCore\String\Constraint\StringConstraintInterface;
+use Funivan\CabbageCore\String\StringConstraint\StringConstraintInterface;
 use Funivan\CabbageCore\String\StringList\StringListInterface;
 
 class FilteredStringList implements StringListInterface

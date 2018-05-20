@@ -1,6 +1,6 @@
 <?php
 
-namespace Funivan\CabbageCore\String\StringList\CompositeStringList;
+namespace Funivan\CabbageCore\String\StringList\Composite;
 
 use Funivan\CabbageCore\String\StringList\PredefinedStringList;
 use PHPUnit\Framework\TestCase;

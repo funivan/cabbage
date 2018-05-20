@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Funivan\CabbageCore\String\Constraint;
+namespace Funivan\CabbageCore\String\StringConstraint;
 
 interface StringConstraintInterface
 {

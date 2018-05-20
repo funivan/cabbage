@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Funivan\CabbageCore\String\StringList\CompositeStringList;
+namespace Funivan\CabbageCore\String\StringList\Composite;
 
 use Funivan\CabbageCore\String\StringList\StringListInterface;
 

@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Funivan\CabbageCore\String\Constraint;
+namespace Funivan\CabbageCore\String\StringConstraint\Regex;
+
+use Funivan\CabbageCore\String\StringConstraint\StringConstraintInterface;
 
 class RegexStringConstraint implements StringConstraintInterface
 {
