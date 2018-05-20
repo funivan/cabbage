@@ -1,6 +1,6 @@
 <?php
 
-namespace Funivan\CabbageCore\Float;
+namespace Funivan\CabbageCore\Float\FloatObject;
 
 use PHPUnit\Framework\TestCase;
 

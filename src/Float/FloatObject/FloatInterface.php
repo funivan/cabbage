@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Funivan\CabbageCore\Float;
+namespace Funivan\CabbageCore\Float\FloatObject;
 
 interface FloatInterface
 {
