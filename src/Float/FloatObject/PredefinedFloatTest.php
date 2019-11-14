@@ -4,7 +4,7 @@ namespace Funivan\CabbageCore\Float\FloatObject;
 
 use PHPUnit\Framework\TestCase;
 
-class PredefinedFloatTest extends TestCase
+final class PredefinedFloatTest extends TestCase
 {
     public function testValue(): void
     {

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Funivan\CabbageCore\String\StringModifier\RegexReplace;
 
 use Funivan\CabbageCore\String\StringModifier\StringModifierInterface;
+use RuntimeException;
+use function is_string;
 
 class RegexReplaceStringModifier implements StringModifierInterface
 {
@@ -27,12 +29,12 @@ class RegexReplaceStringModifier implements StringModifierInterface
     }
 
 
-    public function modify(string $input): string
+    final public function modify(string $input): string
     {
         $result = preg_replace($this->from, $this->to, $input);
-        if (\is_string($result)) {
+        if (is_string($result)) {
             return $result;
         }
-        throw new \RuntimeException('Can not replace string');
+        throw new RuntimeException('Can not replace string');
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Funivan\CabbageCore\String\StringList\Splitted;
 
 use Funivan\CabbageCore\String\StringList\StringListInterface;
+use RuntimeException;
 
 class SplittedStringList implements StringListInterface
 {
@@ -29,13 +30,13 @@ class SplittedStringList implements StringListInterface
 
 
     /**
-     * @return string[]|\Generator
+     * @return string[]|iterable
      */
-    public function all(): \Generator
+    final public function getIterator(): iterable
     {
         $result = preg_split($this->pattern, $this->input);
         if (!is_array($result)) {
-            throw new \RuntimeException('Can not split string');
+            throw new RuntimeException('Can not split string');
         }
         yield from $result;
     }

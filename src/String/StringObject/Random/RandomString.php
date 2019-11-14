@@ -6,6 +6,8 @@ namespace Funivan\CabbageCore\String\StringObject\Random;
 
 use Funivan\CabbageCore\String\StringList\StringListInterface;
 use Funivan\CabbageCore\String\StringObject\StringInterface;
+use RuntimeException;
+use function iterator_to_array;
 
 class RandomString implements StringInterface
 {
@@ -19,13 +21,13 @@ class RandomString implements StringInterface
         $this->list = $list;
     }
 
-    public function value(): string
+    final public function toString(): string
     {
-        $items = \iterator_to_array($this->list->all());
+        $items = iterator_to_array($this->list);
         shuffle($items);
         $result = reset($items);
         if (!is_string($result)) {
-            throw new \RuntimeException('Can not fetch random string from the list');
+            throw new RuntimeException('Can not fetch random string from the list');
         }
         return $result;
     }

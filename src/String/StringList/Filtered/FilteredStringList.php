@@ -30,11 +30,11 @@ class FilteredStringList implements StringListInterface
 
 
     /**
-     * @return string[]|\Generator
+     * @return string[]|iterable
      */
-    public function all(): \Generator
+    final public function getIterator(): iterable
     {
-        foreach ($this->original->all() as $value) {
+        foreach ($this->original->getIterator() as $value) {
             if ($this->constraint->valid($value)) {
                 yield $value;
             }

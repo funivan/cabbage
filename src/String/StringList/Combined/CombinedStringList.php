@@ -24,16 +24,16 @@ class CombinedStringList implements StringListInterface
         $values = [];
         foreach ($items as $item) {
             /** @noinspection SlowArrayOperationsInLoopInspection */
-            $values = array_merge($values, iterator_to_array($item->all()));
+            $values = array_merge($values, iterator_to_array($item));
         }
         $this->values = $values;
     }
 
 
     /**
-     * @return string[]|\Generator
+     * @return string[]|iterable
      */
-    public function all(): \Generator
+    final public function getIterator(): iterable
     {
         yield from $this->values;
     }

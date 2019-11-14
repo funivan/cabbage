@@ -17,9 +17,9 @@ class PredefinedFloatList implements FloatListInterface
     }
 
     /**
-     * @return float[]|\Generator
+     * @return float[]|iterable
      */
-    public function all(): \Generator
+    final public function getIterator(): iterable
     {
         yield from $this->items;
     }

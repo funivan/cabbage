@@ -4,13 +4,13 @@ namespace Funivan\CabbageCore\String\StringObject;
 
 use PHPUnit\Framework\TestCase;
 
-class PredefinedStringTest extends TestCase
+final class PredefinedStringTest extends TestCase
 {
-    public function testValue()
+    public function testValue() : void
     {
         self::assertSame(
             'val',
-            (new PredefinedString('val'))->value()
+            (new PredefinedString('val'))->toString()
         );
     }
 }

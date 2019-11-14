@@ -6,5 +6,5 @@ namespace Funivan\CabbageCore\Int\IntObject;
 
 interface IntInterface
 {
-    public function value(): int;
+    public function toInt(): int;
 }

@@ -22,13 +22,13 @@ class UniqueStringList implements StringListInterface
 
 
     /**
-     * @return string[]|\Generator
+     * @return string[]|iterable
      */
-    public function all(): \Generator
+    final public function getIterator(): iterable
     {
         yield from array_values(
             array_unique(
-                iterator_to_array($this->original->all())
+                iterator_to_array($this->original)
             )
         );
     }

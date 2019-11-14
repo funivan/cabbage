@@ -1,7 +1,7 @@
 {
   "name": "funivan/cabbage-core",
   "type": "library",
-  "description": "Object oriented approach for the primitive types in PHP",
+  "description": "Object oriented PHP framework",
   "license": "MIT",
   "authors": [
     {
@@ -15,10 +15,12 @@
     }
   },
   "require": {
-    "php": "^7.1"
+    "php": "^7.1",
+    "ralouphie/mimey": "^2.1"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.7",
-    "phpunit/phpunit": "7.1.*"
+    "phpunit/phpunit": "7.1.*",
+    "ext-xdebug": "*"
   }
 }

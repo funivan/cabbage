@@ -4,23 +4,25 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Int\ListSize;
 
-use Funivan\CabbageCore\BaseList\ListInterface;
 use Funivan\CabbageCore\Int\IntObject\IntInterface;
+use IteratorAggregate;
+use function count;
+use function iterator_to_array;
 
 class ListSize implements IntInterface
 {
     /**
-     * @var ListInterface
+     * @var IteratorAggregate
      */
     private $list;
 
-    public function __construct(ListInterface $list)
+    public function __construct(IteratorAggregate $list)
     {
         $this->list = $list;
     }
 
-    public function value(): int
+    final public function toInt(): int
     {
-        return \count(\iterator_to_array($this->list->all()));
+        return count(iterator_to_array($this->list));
     }
 }

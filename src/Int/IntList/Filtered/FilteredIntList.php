@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Int\IntList\Filtered;
 
-use Funivan\CabbageCore\BaseList\ListInterface;
 use Funivan\CabbageCore\Int\IntConstraint\IntConstraintInterface;
 use Funivan\CabbageCore\Int\IntList\IntListInterface;
 
-class FilteredIntList implements ListInterface
+class FilteredIntList implements IntListInterface
 {
     /**
      * @var IntConstraintInterface
@@ -25,9 +24,12 @@ class FilteredIntList implements ListInterface
         $this->list = $list;
     }
 
-    public function all(): \Generator
+    /**
+     * @return float[]|iterable
+     */
+    final public function getIterator(): iterable
     {
-        foreach ($this->list->all() as $value) {
+        foreach ($this->list->getIterator() as $value) {
             if ($this->constraint->valid($value)) {
                 yield $value;
             }

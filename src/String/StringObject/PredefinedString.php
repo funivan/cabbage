@@ -19,7 +19,7 @@ class PredefinedString implements StringInterface
     }
 
 
-    final public function value(): string
+    final public function toString(): string
     {
         return $this->value;
     }

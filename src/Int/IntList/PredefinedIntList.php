@@ -19,9 +19,9 @@ class PredefinedIntList implements IntListInterface
     }
 
     /**
-     * @return int[]|\Generator
+     * @return int[]|iterable
      */
-    public function all(): \Generator
+    final public function getIterator(): iterable
     {
         yield from $this->values;
     }

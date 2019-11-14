@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Float\FloatList;
 
-use Funivan\CabbageCore\BaseList\ListInterface;
+use IteratorAggregate;
 
-interface FloatListInterface extends ListInterface
+interface FloatListInterface extends IteratorAggregate
 {
 
     /**
-     * @return float[]|\Generator
+     * @return float[]|iterable
      */
-    public function all(): \Generator;
+    public function getIterator(): iterable;
 }

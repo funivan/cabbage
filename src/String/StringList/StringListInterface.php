@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\String\StringList;
 
-use Funivan\CabbageCore\BaseList\ListInterface;
+use IteratorAggregate;
 
-interface StringListInterface extends ListInterface
+interface StringListInterface extends IteratorAggregate
 {
 
     /**
-     * @return string[]|\Generator
+     * @return string[]|iterable
      */
-    public function all(): \Generator;
+    public function getIterator(): iterable;
 }

@@ -20,7 +20,7 @@ class PredefinedInt implements IntInterface
         $this->value = $value;
     }
 
-    public function value(): int
+    final public function toInt(): int
     {
         return $this->value;
     }

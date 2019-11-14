@@ -21,9 +21,9 @@ class PredefinedStringList implements StringListInterface
 
 
     /**
-     * @return string[]|\Generator
+     * @return string[]|iterable
      */
-    final public function all(): \Generator
+    final public function getIterator(): iterable
     {
         yield from $this->items;
     }

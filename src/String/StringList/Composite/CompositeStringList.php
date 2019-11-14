@@ -20,11 +20,13 @@ class CompositeStringList implements StringListInterface
         $this->items = $items;
     }
 
-
-    public function all(): \Generator
+    /**
+     * @return string[]|iterable
+     */
+    final public function getIterator(): iterable
     {
         foreach ($this->items as $item) {
-            foreach ($item->all() as $value) {
+            foreach ($item->getIterator() as $value) {
                 yield $value;
             }
         }

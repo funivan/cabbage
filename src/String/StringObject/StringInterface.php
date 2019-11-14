@@ -6,5 +6,5 @@ namespace Funivan\CabbageCore\String\StringObject;
 
 interface StringInterface
 {
-    public function value(): string;
+    public function toString(): string;
 }
