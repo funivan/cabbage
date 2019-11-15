@@ -46,7 +46,7 @@ class RegexRouteBuilder implements UrlInterface
         $usedParameters = [];
         $path = preg_replace_callback('/\(\?<(?<name>[a-z]+)>[^)]+\)/', function ($match) use (&$usedParameters) {
             $name = (string)$match['name'];
-            $value = $this->parameters->value($name);
+            $value = $this->parameters->toArray()[$name] ?? null;
             $usedParameters[$name] = true;
             return $value;
         }, $path);

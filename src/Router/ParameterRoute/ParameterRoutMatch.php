@@ -90,7 +90,10 @@ class ParameterRoutMatch implements RouteMatchInterface
             $nextResult = $this->next->match($request);
             if ($nextResult->matched()) {
                 $name = $this->constrain->name();
-                $parameters = new ArrayObject([$name => $data->value($name)]);
+                $parameters = new ArrayObject([
+                        $name => ($data->toArray()[$name] ?? null)
+                    ]
+                );
                 $result = MatchResult::create(
                     true,
                     new ArrayObject(

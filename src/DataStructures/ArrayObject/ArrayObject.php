@@ -23,15 +23,6 @@ class ArrayObject implements ArrayObjectInterface
 
 
     /**
-     * @noinspection MissingReturnTypeInspection
-     */
-    final public function value(string $name)
-    {
-        return $this->data[$name] ?? null;
-    }
-
-
-    /**
      * @return array
      */
     final public function toArray(): array

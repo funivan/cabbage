@@ -40,7 +40,8 @@ class SameParameterConstrain implements ParameterConstrainInterface
      */
     final public function validate(ArrayObjectInterface $parameters): bool
     {
-        return ($parameters->value($this->name) === $this->value);
+        $parameter = $parameters->toArray()[$this->name] ?? null;
+        return ($parameter === $this->value);
     }
 
 

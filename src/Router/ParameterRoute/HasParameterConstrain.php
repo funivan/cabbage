@@ -34,7 +34,8 @@ class HasParameterConstrain implements ParameterConstrainInterface
      */
     final public function validate(ArrayObjectInterface $parameters): bool
     {
-        return $parameters->value($this->name()) !== null;
+        return ($parameters->toArray()[$this->name()] ?? null)
+            !== null;
     }
 
 

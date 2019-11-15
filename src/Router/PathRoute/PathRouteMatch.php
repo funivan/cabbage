@@ -38,7 +38,8 @@ class PathRouteMatch implements RouteMatchInterface
      */
     final public function match(RequestInterface $request): MatchResultInterface
     {
-        if ($request->server()->value('PATH_INFO') === $this->path) {
+        $path = $request->server()->toArray()['PATH_INFO'] ?? null;
+        if ($path === $this->path) {
             $result = MatchResult::create(true, new ArrayObject([]));
         } else {
             $result = new FailedMatchResult();
