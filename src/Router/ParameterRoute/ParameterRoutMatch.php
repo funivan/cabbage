@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\ParameterRoute;
 
-use Funivan\CabbageCore\Http\Request\Parameters;
-use Funivan\CabbageCore\Http\Request\ParametersInterface;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Router\Match\Result\FailedMatchResult;
 use Funivan\CabbageCore\Router\Match\Result\MatchResult;
@@ -90,8 +90,16 @@ class ParameterRoutMatch implements RouteMatchInterface
             $nextResult = $this->next->match($request);
             if ($nextResult->matched()) {
                 $name = $this->constrain->name();
-                $parameters = new Parameters([$name => $data->value($name)]);
-                $result = MatchResult::create(true, $parameters->merge($nextResult->parameters()));
+                $parameters = new ArrayObject([$name => $data->value($name)]);
+                $result = MatchResult::create(
+                    true,
+                    new ArrayObject(
+                        array_merge_recursive(
+                            $parameters->toArray(),
+                            $nextResult->parameters()
+                        )
+                    )
+                );
             }
         }
         return $result;
@@ -100,9 +108,9 @@ class ParameterRoutMatch implements RouteMatchInterface
 
     /**
      * @param RequestInterface $request
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    private function retrieveBag(RequestInterface $request): ParametersInterface
+    private function retrieveBag(RequestInterface $request): ArrayObjectInterface
     {
         if ('GET' === $this->type) {
             $data = $request->get();

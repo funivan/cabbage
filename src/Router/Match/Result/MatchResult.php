@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\Match\Result;
 
-use Funivan\CabbageCore\Http\Request\Parameters;
-use Funivan\CabbageCore\Http\Request\ParametersInterface;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 
 /**
  *
@@ -19,16 +19,16 @@ class MatchResult implements MatchResultInterface
     private $matched;
 
     /**
-     * @var ParametersInterface
+     * @var ArrayObjectInterface
      */
     private $parameters;
 
 
     /**
      * @param bool $matched
-     * @param ParametersInterface $parameters
+     * @param ArrayObjectInterface $parameters
      */
-    private function __construct(bool $matched, ParametersInterface $parameters)
+    private function __construct(bool $matched, ArrayObjectInterface $parameters)
     {
         $this->matched = $matched;
         $this->parameters = $parameters;
@@ -37,10 +37,10 @@ class MatchResult implements MatchResultInterface
 
     /**
      * @param bool $matched
-     * @param ParametersInterface $parameters
+     * @param ArrayObjectInterface $parameters
      * @return MatchResultInterface
      */
-    public static function create(bool $matched, ParametersInterface $parameters): MatchResultInterface
+    public static function create(bool $matched, ArrayObjectInterface $parameters): MatchResultInterface
     {
         return new self($matched, $parameters);
     }
@@ -51,7 +51,7 @@ class MatchResult implements MatchResultInterface
      */
     public static function createSuccess(): MatchResultInterface
     {
-        return new self(true, new Parameters([]));
+        return new self(true, new ArrayObject([]));
     }
 
 
@@ -65,9 +65,9 @@ class MatchResult implements MatchResultInterface
 
 
     /**
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    final public function parameters(): ParametersInterface
+    final public function parameters(): ArrayObjectInterface
     {
         return $this->parameters;
     }

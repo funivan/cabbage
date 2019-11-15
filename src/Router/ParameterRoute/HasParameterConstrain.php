@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\ParameterRoute;
 
-use Funivan\CabbageCore\Http\Request\ParametersInterface;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 
 /**
  * Check if Parameters has specific parameter
@@ -29,12 +29,12 @@ class HasParameterConstrain implements ParameterConstrainInterface
 
 
     /**
-     * @param ParametersInterface $parameters
+     * @param ArrayObjectInterface $parameters
      * @return bool
      */
-    final public function validate(ParametersInterface $parameters): bool
+    final public function validate(ArrayObjectInterface $parameters): bool
     {
-        return $parameters->has($this->name());
+        return $parameters->value($this->name()) !== null;
     }
 
 

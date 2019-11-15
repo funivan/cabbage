@@ -6,7 +6,7 @@ namespace Funivan\CabbageCore\Router\Tests;
 use Funivan\CabbageCore\DataStructures\Stack\StringStack;
 use Funivan\CabbageCore\Dispatcher\DispatcherInterface;
 use Funivan\CabbageCore\Http\Request\Cookie\RequestCookies;
-use Funivan\CabbageCore\Http\Request\Parameters;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
 use Funivan\CabbageCore\Http\Request\Request;
 use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Http\Response\Body\BufferedBody;
@@ -30,7 +30,7 @@ final class RouteDispatcherTest extends TestCase
         $routeMatch = new class implements RouteMatchInterface {
             final public function match(RequestInterface $request): MatchResultInterface
             {
-                return MatchResult::create(true, new Parameters(['id' => $request->get()->value('formId')]));
+                return MatchResult::create(true, new ArrayObject(['id' => $request->get()->value('formId')]));
             }
         };
         $dispatcher = new class implements DispatcherInterface {
@@ -45,10 +45,10 @@ final class RouteDispatcherTest extends TestCase
         $routeDispatcher = new RouterDispatcher([new Route($routeMatch, $dispatcher)]);
         $response = $routeDispatcher->handle(
             new Request(
-                new Parameters(['formId' => '123']),
-                new Parameters([]),
-                new Parameters([]),
-                new Parameters([]),
+                new ArrayObject(['formId' => '123']),
+                new ArrayObject([]),
+                new ArrayObject([]),
+                new ArrayObject([]),
                 RequestCookies::create([])
             )
         );

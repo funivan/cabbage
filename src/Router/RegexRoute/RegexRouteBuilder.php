@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\RegexRoute;
 
-use Funivan\CabbageCore\Http\Request\ParametersInterface;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 use Funivan\CabbageCore\Router\UrlInterface;
 
 /**
@@ -19,16 +19,16 @@ class RegexRouteBuilder implements UrlInterface
     private $regex;
 
     /**
-     * @var ParametersInterface
+     * @var ArrayObjectInterface
      */
     private $parameters;
 
 
     /**
      * @param string $regex
-     * @param ParametersInterface $parameters
+     * @param ArrayObjectInterface $parameters
      */
-    public function __construct(string $regex, ParametersInterface $parameters)
+    public function __construct(string $regex, ArrayObjectInterface $parameters)
     {
         $this->regex = $regex;
         $this->parameters = $parameters;
@@ -50,7 +50,7 @@ class RegexRouteBuilder implements UrlInterface
             $usedParameters[$name] = true;
             return $value;
         }, $path);
-        $additionalParameters = $this->parameters->all();
+        $additionalParameters = $this->parameters->toArray();
         foreach ($additionalParameters as $name => $parameter) {
             if (array_key_exists($name, $usedParameters)) {
                 unset($additionalParameters[$name]);

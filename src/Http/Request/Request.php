@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Http\Request;
 
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 use Funivan\CabbageCore\Http\Request\Cookie\RequestCookiesInterface;
 
 /**
@@ -13,22 +15,22 @@ class Request implements RequestInterface
 {
 
     /**
-     * @var ParametersInterface
+     * @var ArrayObjectInterface
      */
     private $get;
 
     /**
-     * @var ParametersInterface
+     * @var ArrayObjectInterface
      */
     private $post;
 
     /**
-     * @var ParametersInterface
+     * @var ArrayObjectInterface
      */
     private $server;
 
     /**
-     * @var ParametersInterface
+     * @var ArrayObjectInterface
      */
     private $userParameters;
 
@@ -39,13 +41,13 @@ class Request implements RequestInterface
 
 
     /**
-     * @param ParametersInterface $get
-     * @param ParametersInterface $post
-     * @param ParametersInterface $server
-     * @param ParametersInterface $userParameters
+     * @param ArrayObjectInterface $get
+     * @param ArrayObjectInterface $post
+     * @param ArrayObjectInterface $server
+     * @param ArrayObjectInterface $userParameters
      * @param RequestCookiesInterface $cookies
      */
-    public function __construct(ParametersInterface $get, ParametersInterface $post, ParametersInterface $server, ParametersInterface $userParameters, RequestCookiesInterface $cookies)
+    public function __construct(ArrayObjectInterface $get, ArrayObjectInterface $post, ArrayObjectInterface $server, ArrayObjectInterface $userParameters, RequestCookiesInterface $cookies)
     {
         $this->get = $get;
         $this->post = $post;
@@ -56,52 +58,52 @@ class Request implements RequestInterface
 
 
     /**
-     * @param ParametersInterface $parameters
+     * @param ArrayObjectInterface $parameters
      * @return RequestInterface
      */
-    final public function withParameters(ParametersInterface $parameters): RequestInterface
+    final public function withParameters(ArrayObjectInterface $parameters): RequestInterface
     {
         return new Request(
             $this->get,
             $this->post,
             $this->server,
-            $this->userParameters->merge($parameters),
+            new ArrayObject(array_merge_recursive($this->parameters()->toArray(), $parameters->toArray())),
             $this->cookies
         );
     }
 
 
     /**
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    final public function get(): ParametersInterface
+    final public function get(): ArrayObjectInterface
     {
         return $this->get;
     }
 
 
     /**
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    final public function server(): ParametersInterface
+    final public function server(): ArrayObjectInterface
     {
         return $this->server;
     }
 
 
     /**
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    final public function post(): ParametersInterface
+    final public function post(): ArrayObjectInterface
     {
         return $this->post;
     }
 
 
     /**
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    final public function parameters(): ParametersInterface
+    final public function parameters(): ArrayObjectInterface
     {
         return $this->userParameters;
     }

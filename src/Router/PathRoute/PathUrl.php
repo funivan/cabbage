@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\PathRoute;
 
-use Funivan\CabbageCore\Http\Request\ParametersInterface;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 use Funivan\CabbageCore\Router\UrlInterface;
 
 /**
@@ -19,16 +19,16 @@ class PathUrl implements UrlInterface
     private $path;
 
     /**
-     * @var ParametersInterface
+     * @var ArrayObjectInterface
      */
     private $parameters;
 
 
     /**
      * @param string $path
-     * @param ParametersInterface $parameters
+     * @param ArrayObjectInterface $parameters
      */
-    public function __construct(string $path, ParametersInterface $parameters)
+    public function __construct(string $path, ArrayObjectInterface $parameters)
     {
         $this->path = $path;
         $this->parameters = $parameters;
@@ -43,7 +43,7 @@ class PathUrl implements UrlInterface
     final public function build(): string
     {
         $path = $this->path;
-        $parameters = $this->parameters->all();
+        $parameters = $this->parameters->toArray();
         if (count($parameters) > 0) {
             $path = $path . '?' . http_build_query($parameters);
         }

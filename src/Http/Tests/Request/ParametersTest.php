@@ -3,8 +3,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Http\Tests\Request;
 
-use Funivan\CabbageCore\Http\Request\Parameters;
-use InvalidArgumentException;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -13,36 +12,18 @@ use PHPUnit\Framework\TestCase;
 final class ParametersTest extends TestCase
 {
 
-    public function testHas(): void
+    public function testReturnArray(): void
     {
-        $parameters = new Parameters(['user' => '', 'id' => 123]);
-        self::assertTrue($parameters->has('user'));
-        self::assertTrue($parameters->has('id'));
-        self::assertFalse($parameters->has('name'));
+        $parameters = new ArrayObject(['users' => ['1', '2'], 'id' => 123]);
+        self::assertSame(['1', '2'], $parameters->value('users'));
     }
 
 
     public function testValue(): void
     {
-        $parameters = new Parameters(['user' => '', 'name' => true]);
-        self::assertSame('1', $parameters->value('name'));
+        $parameters = new ArrayObject(['user' => '', 'name' => true]);
+        self::assertTrue($parameters->value('name'));
         self::assertSame('', $parameters->value('user'));
-
     }
-
-
-    /**
-     * @expectedException InvalidArgumentException
-     * @expectedExceptionMessage Can not fetch parameter: surname
-     */
-    public function testInvalidValueAccess(): void
-    {
-        $parameters = new Parameters(['user' => '', 'name' => 'user name']);
-        self::assertSame('user name', $parameters->value('name'));
-
-        $parameters->value('surname');
-
-    }
-
 
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\ParameterRoute;
 
-use Funivan\CabbageCore\Http\Request\ParametersInterface;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 
 /**
  *
@@ -13,10 +13,10 @@ interface ParameterConstrainInterface
 {
 
     /**
-     * @param ParametersInterface $parameters
+     * @param ArrayObjectInterface $parameters
      * @return bool
      */
-    public function validate(ParametersInterface $parameters): bool;
+    public function validate(ArrayObjectInterface $parameters): bool;
 
 
     /**

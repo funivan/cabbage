@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\Match\Result;
 
-use Funivan\CabbageCore\Http\Request\ParametersInterface;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 
 /**
  *
@@ -19,9 +19,9 @@ interface MatchResultInterface
 
 
     /**
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    public function parameters(): ParametersInterface;
+    public function parameters(): ArrayObjectInterface;
 
 
 }

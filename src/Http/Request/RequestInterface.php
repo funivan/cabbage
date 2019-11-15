@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Http\Request;
 
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 use Funivan\CabbageCore\Http\Request\Cookie\RequestCookiesInterface;
 
 
@@ -17,33 +18,33 @@ interface RequestInterface
     /**
      * Represent input GET parameters
      *
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    public function get(): ParametersInterface;
+    public function get(): ArrayObjectInterface;
 
 
     /**
      * Represent SERVER parameters
      *
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    public function server(): ParametersInterface;
+    public function server(): ArrayObjectInterface;
 
 
     /**
      * Represent input POST parameters
      *
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    public function post(): ParametersInterface;
+    public function post(): ArrayObjectInterface;
 
 
     /**
      * Represent custom user parameters. Can be
      *
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    public function parameters(): ParametersInterface;
+    public function parameters(): ArrayObjectInterface;
 
 
     /**
@@ -53,9 +54,9 @@ interface RequestInterface
 
 
     /**
-     * @param ParametersInterface $parameters
+     * @param ArrayObjectInterface $parameters
      * @return RequestInterface
      */
-    public function withParameters(ParametersInterface $parameters): RequestInterface;
+    public function withParameters(ArrayObjectInterface $parameters): RequestInterface;
 
 }

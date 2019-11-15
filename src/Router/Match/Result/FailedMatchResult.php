@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\Match\Result;
 
-use Funivan\CabbageCore\Http\Request\Parameters;
-use Funivan\CabbageCore\Http\Request\ParametersInterface;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 
 class FailedMatchResult implements MatchResultInterface
 {
@@ -20,10 +20,10 @@ class FailedMatchResult implements MatchResultInterface
 
 
     /**
-     * @return ParametersInterface
+     * @return ArrayObjectInterface
      */
-    final public function parameters(): ParametersInterface
+    final public function parameters(): ArrayObjectInterface
     {
-        return new Parameters([]);
+        return new ArrayObject([]);
     }
 }

@@ -19,7 +19,7 @@ final class MatchResultTest extends TestCase
     {
         self::assertCount(
             0,
-            MatchResult::createSuccess()->parameters()->all()
+            MatchResult::createSuccess()->parameters()->toArray()
         );
     }
 }

@@ -6,7 +6,7 @@ namespace Funivan\CabbageCore\Dispatcher\Tests;
 use Funivan\CabbageCore\Dispatcher\App;
 use Funivan\CabbageCore\Dispatcher\StaticDispatcher;
 use Funivan\CabbageCore\Http\Request\Cookie\RequestCookies;
-use Funivan\CabbageCore\Http\Request\Parameters;
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
 use Funivan\CabbageCore\Http\Request\Request;
 use Funivan\CabbageCore\Http\Response\Headers\Field;
 use Funivan\CabbageCore\Http\Response\Headers\Headers;
@@ -32,10 +32,10 @@ final class AppTest extends TestCase
             )
         );
         $request = new Request(
-            new Parameters([]),
-            new Parameters([]),
-            new Parameters([]),
-            new Parameters([]),
+            new ArrayObject([]),
+            new ArrayObject([]),
+            new ArrayObject([]),
+            new ArrayObject([]),
             RequestCookies::create([])
         );
         ob_start();
@@ -43,7 +43,6 @@ final class AppTest extends TestCase
         $body = ob_get_clean();
         self::assertSame('custom body text', $body);
         if (function_exists('xdebug_get_headers')) {
-            /** @noinspection ForgottenDebugOutputInspection */
             /** @noinspection PhpComposerExtensionStubsInspection */
             self::assertSame(['X-User-Time: 1489'], xdebug_get_headers());
         }

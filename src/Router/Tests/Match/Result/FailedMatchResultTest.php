@@ -20,7 +20,7 @@ final class FailedMatchResultTest extends TestCase
     {
         self::assertCount(
             0,
-            (new FailedMatchResult())->parameters()->all()
+            (new FailedMatchResult())->parameters()->toArray()
         );
     }
 
