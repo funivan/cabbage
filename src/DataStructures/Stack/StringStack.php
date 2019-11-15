@@ -51,5 +51,4 @@ class StringStack implements StringStackInterface
     {
         return count($this->elements) === 0;
     }
-
 }

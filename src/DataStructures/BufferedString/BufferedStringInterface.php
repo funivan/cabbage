@@ -33,5 +33,4 @@ interface BufferedStringInterface
      * @return string
      */
     public function read(): string;
-
 }

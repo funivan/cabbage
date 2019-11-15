@@ -34,6 +34,4 @@ class PlainBody implements BodyInterface
     {
         echo $this->content;
     }
-
-
 }

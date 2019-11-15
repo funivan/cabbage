@@ -9,7 +9,6 @@ use Funivan\CabbageCore\Fs\Fs\Local\LocalPath;
 use Funivan\CabbageCore\Fs\PathInterface;
 use Iterator;
 
-
 class LocalFsFinder implements FinderInterface
 {
 
@@ -51,5 +50,4 @@ class LocalFsFinder implements FinderInterface
             }
         }
     }
-
 }

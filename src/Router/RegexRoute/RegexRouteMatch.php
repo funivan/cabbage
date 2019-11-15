@@ -38,7 +38,7 @@ class RegexRouteMatch implements RouteMatchInterface
      */
     final public function match(RequestInterface $request): MatchResultInterface
     {
-        $path = (string)$request->server()->toArray()['PATH_INFO'] ?? '';
+        $path = (string)($request->server()->toArray()['PATH_INFO'] ?? '');
         $matched = (preg_match('!^' . $this->regex . '$!', $path, $params) === 1);
         if ($matched) {
             foreach ((array)$params as $index => $param) {
@@ -52,5 +52,4 @@ class RegexRouteMatch implements RouteMatchInterface
         }
         return $result;
     }
-
 }

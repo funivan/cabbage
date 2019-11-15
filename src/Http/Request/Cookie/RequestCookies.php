@@ -78,5 +78,4 @@ class RequestCookies implements RequestCookiesInterface
         }
         return $this->cookies[$name];
     }
-
 }

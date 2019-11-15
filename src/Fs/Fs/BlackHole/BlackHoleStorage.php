@@ -55,7 +55,6 @@ class BlackHoleStorage implements FileStorageInterface
      */
     final public function write(PathInterface $path, string $data): void
     {
-
     }
 
 
@@ -74,7 +73,6 @@ class BlackHoleStorage implements FileStorageInterface
      */
     final public function remove(PathInterface $path): void
     {
-
     }
 
 
@@ -84,8 +82,5 @@ class BlackHoleStorage implements FileStorageInterface
      */
     final public function move(PathInterface $old, PathInterface $new): void
     {
-
     }
-
-
 }

@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class ParsedStringTest extends TestCase
 {
-
     public function testHas(): void
     {
         self::assertTrue(
@@ -56,5 +55,4 @@ final class ParsedStringTest extends TestCase
                 ->value()
         );
     }
-
 }

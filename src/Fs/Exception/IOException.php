@@ -9,5 +9,4 @@ namespace Funivan\CabbageCore\Fs\Exception;
  */
 interface IOException
 {
-
 }

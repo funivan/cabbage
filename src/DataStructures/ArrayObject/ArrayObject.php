@@ -29,5 +29,4 @@ class ArrayObject implements ArrayObjectInterface
     {
         return $this->data;
     }
-
 }

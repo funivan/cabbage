@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Dispatcher\Tests;
 
+use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
 use Funivan\CabbageCore\Dispatcher\App;
 use Funivan\CabbageCore\Dispatcher\StaticDispatcher;
 use Funivan\CabbageCore\Http\Request\Cookie\RequestCookies;
-use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
 use Funivan\CabbageCore\Http\Request\Request;
 use Funivan\CabbageCore\Http\Response\Headers\Field;
 use Funivan\CabbageCore\Http\Response\Headers\Headers;
@@ -28,7 +28,8 @@ final class AppTest extends TestCase
             new StaticDispatcher(
                 PlainResponse::createWithHeaders(
                     'custom body text',
-                    new Headers([new Field('X-User-Time', '1489')]))
+                    new Headers([new Field('X-User-Time', '1489')])
+                )
             )
         );
         $request = new Request(
@@ -47,5 +48,4 @@ final class AppTest extends TestCase
             self::assertSame(['X-User-Time: 1489'], xdebug_get_headers());
         }
     }
-
 }

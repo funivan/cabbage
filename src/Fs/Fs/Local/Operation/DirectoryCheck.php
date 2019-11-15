@@ -20,5 +20,4 @@ class DirectoryCheck implements DirectoryOperation
     {
         return is_dir($path->assemble());
     }
-
 }

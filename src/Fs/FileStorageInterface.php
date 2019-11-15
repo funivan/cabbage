@@ -10,7 +10,6 @@ use Funivan\CabbageCore\Fs\Finder\FinderInterface;
  */
 interface FileStorageInterface
 {
-
     public const TYPE_UNKNOWN = 'unknown';
 
     public const TYPE_FILE = 'file';
@@ -68,5 +67,4 @@ interface FileStorageInterface
      * @return void
      */
     public function move(PathInterface $old, PathInterface $new): void;
-
 }

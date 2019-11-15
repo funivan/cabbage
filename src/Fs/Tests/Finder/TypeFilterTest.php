@@ -11,8 +11,6 @@ use PHPUnit\Framework\TestCase;
 
 final class TypeFilterTest extends TestCase
 {
-
-
     public function testDirectory() : void
     {
         $fs = new MemoryStorage();
@@ -30,5 +28,4 @@ final class TypeFilterTest extends TestCase
         );
         self::assertCount(3, $items);
     }
-
 }

@@ -112,5 +112,4 @@ class ResponseStatus implements StatusInterface
         }
         return self::PHRASES[$this->code];
     }
-
 }

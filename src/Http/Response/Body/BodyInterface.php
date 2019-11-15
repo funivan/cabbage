@@ -16,5 +16,4 @@ interface BodyInterface
      * @return void
      */
     public function send(): void;
-
 }

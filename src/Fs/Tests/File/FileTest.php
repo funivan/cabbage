@@ -13,7 +13,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class FileTest extends TestCase
 {
-
     public function testSuccessfulContentRead(): void
     {
         $storage = new MemoryStorage();
@@ -21,6 +20,4 @@ final class FileTest extends TestCase
         $file = File::create(new LocalPath('/test/custom/file.txt'), $storage);
         self::assertSame('file content', $file->read());
     }
-
-
 }

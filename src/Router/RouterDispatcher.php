@@ -53,5 +53,4 @@ class RouterDispatcher implements DispatcherInterface
             sprintf('Route not found. Number of routes: %s', count($this->routes))
         );
     }
-
 }

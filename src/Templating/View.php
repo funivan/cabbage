@@ -108,6 +108,4 @@ class View implements ViewInterface
         include $this->id;
         return ob_get_clean();
     }
-
-
 }

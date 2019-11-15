@@ -48,5 +48,4 @@ class Field implements FieldInterface
     {
         return $this->value;
     }
-
 }

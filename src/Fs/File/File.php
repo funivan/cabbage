@@ -121,6 +121,4 @@ class File implements FileInterface
     {
         return $this->path;
     }
-
-
 }

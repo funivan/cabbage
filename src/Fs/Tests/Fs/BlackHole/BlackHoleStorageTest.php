@@ -14,7 +14,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class BlackHoleStorageTest extends TestCase
 {
-
     public function testDummyWrite(): void
     {
         $storage = new BlackHoleStorage();
@@ -49,6 +48,4 @@ final class BlackHoleStorageTest extends TestCase
     {
         (new BlackHoleStorage())->read(new LocalPath('/document.txt'));
     }
-
-
 }

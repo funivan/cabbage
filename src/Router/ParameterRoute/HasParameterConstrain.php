@@ -46,6 +46,4 @@ class HasParameterConstrain implements ParameterConstrainInterface
     {
         return $this->name;
     }
-
-
 }

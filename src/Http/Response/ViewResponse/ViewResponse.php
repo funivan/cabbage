@@ -58,5 +58,4 @@ class ViewResponse implements ResponseInterface
     {
         return new ViewBody($this->view);
     }
-
 }

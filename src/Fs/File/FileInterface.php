@@ -61,6 +61,4 @@ interface FileInterface
      * @return FileInterface
      */
     public function move(PathInterface $path): FileInterface;
-
-
 }

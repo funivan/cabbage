@@ -24,7 +24,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class RouteDispatcherTest extends TestCase
 {
-
     public function testPassCustomParametersOnMatch(): void
     {
         $routeMatch = new class implements RouteMatchInterface {

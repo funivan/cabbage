@@ -9,8 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 final class InMemoryPathFinderTest extends TestCase
 {
-
-
     public function testMatch() : void
     {
         $finder = new InMemoryPathFinder(

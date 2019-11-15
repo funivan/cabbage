@@ -6,7 +6,6 @@ namespace Funivan\CabbageCore\Dispatcher;
 
 use Funivan\CabbageCore\Http\Request\Request;
 
-
 class App implements AppInterface
 {
 

@@ -16,5 +16,4 @@ interface DirectoryOperation
      * @return bool
      */
     public function perform(PathInterface $path): bool;
-
 }

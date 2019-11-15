@@ -13,19 +13,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class ViewTest extends TestCase
 {
-
-    private static function assertViewContent(string $content, ViewInterface $view) : void
-    {
-        self::assertSame(
-            $content,
-            preg_replace(
-                '!>\s*<!',
-                '><',
-                str_replace("\n", '', trim($view->render()))
-            )
-        );
-    }
-
     public function testSimpleRender(): void
     {
         $view = View::create(__DIR__ . '/fixtures/viewTitle.php', ['title' => 'users']);
@@ -59,7 +46,8 @@ final class ViewTest extends TestCase
                     )
                 );
         self::assertViewContent(
-            '<div class="wrapper"><div class="wrapper"><h1>Test title</h1></div></div>', $view
+            '<div class="wrapper"><div class="wrapper"><h1>Test title</h1></div></div>',
+            $view
         );
     }
 
@@ -74,5 +62,15 @@ final class ViewTest extends TestCase
         $view->render();
     }
 
-
+    private static function assertViewContent(string $content, ViewInterface $view) : void
+    {
+        self::assertSame(
+            $content,
+            preg_replace(
+                '!>\s*<!',
+                '><',
+                str_replace("\n", '', trim($view->render()))
+            )
+        );
+    }
 }

@@ -13,8 +13,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class MemoryStorageTest extends TestCase
 {
-
-
     public function testRead(): void
     {
         $storage = new MemoryStorage();
@@ -77,6 +75,4 @@ final class MemoryStorageTest extends TestCase
             iterator_count($storage->finder(new LocalPath('/my/doc'))->items())
         );
     }
-
-
 }

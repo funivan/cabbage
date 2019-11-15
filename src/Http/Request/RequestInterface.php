@@ -7,7 +7,6 @@ namespace Funivan\CabbageCore\Http\Request;
 use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObjectInterface;
 use Funivan\CabbageCore\Http\Request\Cookie\RequestCookiesInterface;
 
-
 /**
  *
  */
@@ -58,5 +57,4 @@ interface RequestInterface
      * @return RequestInterface
      */
     public function withParameters(ArrayObjectInterface $parameters): RequestInterface;
-
 }

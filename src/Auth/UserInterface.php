@@ -32,5 +32,4 @@ interface UserInterface
      * @return bool
      */
     public function validatePassword(string $password): bool;
-
 }

@@ -71,5 +71,4 @@ class MatchResult implements MatchResultInterface
     {
         return $this->parameters;
     }
-
 }

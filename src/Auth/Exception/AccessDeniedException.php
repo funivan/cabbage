@@ -11,5 +11,4 @@ use Exception;
  */
 final class AccessDeniedException extends Exception
 {
-
 }

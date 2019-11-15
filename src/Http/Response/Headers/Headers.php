@@ -89,5 +89,4 @@ class Headers implements HeadersInterface
             sprintf('Field with name "%s" does not exists', $name)
         );
     }
-
 }

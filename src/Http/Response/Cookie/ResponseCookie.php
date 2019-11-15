@@ -11,7 +11,6 @@ use DateTimeInterface;
  */
 class ResponseCookie implements ResponseCookieInterface
 {
-
     public const HTTP_ONLY = 'HttpOnly';
 
     public const SECURE = 'Secure';
@@ -92,5 +91,4 @@ class ResponseCookie implements ResponseCookieInterface
     {
         return $this->name . '=' . $this->value . ';' . implode(';', $this->parts);
     }
-
 }

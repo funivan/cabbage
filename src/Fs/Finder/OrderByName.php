@@ -50,5 +50,4 @@ class OrderByName implements FinderInterface
         }
         return new ArrayIterator($items);
     }
-
 }

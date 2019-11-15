@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase;
 
 final class LocalFsStorageTest extends TestCase
 {
-
     public function testWriteRead() : void
     {
         $fs = LocalFsStorage::create(new LocalPath(sys_get_temp_dir()));
@@ -50,5 +49,4 @@ final class LocalFsStorageTest extends TestCase
         }
         self::assertSame([$filePath->assemble()], $files);
     }
-
 }

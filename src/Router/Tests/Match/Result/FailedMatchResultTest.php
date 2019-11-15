@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 final class FailedMatchResultTest extends TestCase
 {
-
     public function testFailureResult(): void
     {
         self::assertFalse((new FailedMatchResult())->matched());
@@ -23,5 +22,4 @@ final class FailedMatchResultTest extends TestCase
             (new FailedMatchResult())->parameters()->toArray()
         );
     }
-
 }

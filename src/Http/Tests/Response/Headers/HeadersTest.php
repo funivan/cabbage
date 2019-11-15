@@ -13,11 +13,10 @@ use PHPUnit\Framework\TestCase;
  */
 final class HeadersTest extends TestCase
 {
-
-
     public function testMerge(): void
     {
-        self::assertCount(2,
+        self::assertCount(
+            2,
             (new Headers([new Field('Set-Cookie', 'User=1')]))
                 ->merge(new Headers([new Field('Location', '/')]))
                 ->fields()
@@ -39,7 +38,8 @@ final class HeadersTest extends TestCase
 
     public function testGet() : void
     {
-        self::assertSame('/test.com',
+        self::assertSame(
+            '/test.com',
             (new Headers([new Field('Location', '/test.com')]))->field('Location')->value()
         );
     }
@@ -50,11 +50,10 @@ final class HeadersTest extends TestCase
         $this->expectException(OverwriteHeaderFieldException::class);
         $this->expectExceptionMessage('Header field Location is already defined');
         (new Headers(
-            [new Field('Location', 'test.com')])
+            [new Field('Location', 'test.com')]
+        )
         )->merge(
             new Headers([new Field('Location', '/')])
         );
     }
-
-
 }

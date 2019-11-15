@@ -12,6 +12,4 @@ use Funivan\CabbageCore\Router\Match\RouteMatchInterface;
  */
 interface RouteInterface extends RouteMatchInterface, DispatcherInterface
 {
-
-
 }

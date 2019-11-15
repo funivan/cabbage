@@ -11,5 +11,4 @@ use Exception;
  */
 final class ReadException extends Exception implements IOException
 {
-
 }

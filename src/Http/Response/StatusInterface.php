@@ -24,5 +24,4 @@ interface StatusInterface
      * @return string
      */
     public function phrase(): string;
-
 }

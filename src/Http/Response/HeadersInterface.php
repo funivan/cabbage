@@ -38,5 +38,4 @@ interface HeadersInterface
      * @return HeadersInterface
      */
     public function merge(HeadersInterface $headers): HeadersInterface;
-
 }

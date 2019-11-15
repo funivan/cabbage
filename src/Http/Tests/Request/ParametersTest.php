@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class ParametersTest extends TestCase
 {
-
     public function testReturnArray(): void
     {
         $parameters = new ArrayObject(['users' => ['1', '2'], 'id' => 123]);
@@ -20,6 +19,4 @@ final class ParametersTest extends TestCase
             $parameters->toArray()['users'] ?? []
         );
     }
-
-
 }

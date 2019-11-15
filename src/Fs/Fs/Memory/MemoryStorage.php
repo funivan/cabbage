@@ -112,6 +112,4 @@ class MemoryStorage implements FileStorageInterface
     {
         unset($this->files[$path->assemble()]);
     }
-
-
 }

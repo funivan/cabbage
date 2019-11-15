@@ -48,6 +48,4 @@ class BufferedBody implements BodyInterface
         $data = (string)ob_get_clean();
         $this->stack->push($data);
     }
-
-
 }

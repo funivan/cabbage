@@ -11,7 +11,6 @@ use Funivan\CabbageCore\Auth\UserInterface;
  */
 class DummyUser implements UserInterface
 {
-
     public const ANONYMOUS = 'anonymous';
 
     /**
@@ -62,7 +61,7 @@ class DummyUser implements UserInterface
      */
     final public function authorized(string $ruleId): bool
     {
-        return in_array($ruleId, $this->rules);
+        return in_array($ruleId, $this->rules, true);
     }
 
 
@@ -74,5 +73,4 @@ class DummyUser implements UserInterface
     {
         return $password === $this->pass;
     }
-
 }

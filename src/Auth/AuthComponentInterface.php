@@ -39,6 +39,4 @@ interface AuthComponentInterface
      * @return void
      */
     public function logIn(UserInterface $user): void;
-
-
 }

@@ -101,5 +101,4 @@ class FileResponse implements ResponseInterface
     {
         return new PlainBody($this->file->read());
     }
-
 }

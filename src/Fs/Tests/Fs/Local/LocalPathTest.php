@@ -14,7 +14,6 @@ use RuntimeException;
  */
 final class LocalPathTest extends TestCase
 {
-
     public function testPrevious(): void
     {
         self::assertSame(
@@ -131,11 +130,10 @@ final class LocalPathTest extends TestCase
 
     public function testNextFromRoot(): void
     {
-        self::assertSame('/test',
+        self::assertSame(
+            '/test',
             (new LocalPath('/'))
                 ->next(new LocalPath('/test'))->assemble()
         );
     }
-
-
 }

@@ -59,5 +59,4 @@ class AuthorizationDispatcher implements DispatcherInterface
         }
         return $this->original->handle($request);
     }
-
 }

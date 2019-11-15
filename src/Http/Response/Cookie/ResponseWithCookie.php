@@ -76,5 +76,4 @@ class ResponseWithCookie implements ResponseInterface
     {
         return $this->original->body();
     }
-
 }

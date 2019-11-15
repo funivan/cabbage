@@ -20,6 +20,4 @@ interface RequestCookieInterface
      * @return string
      */
     public function value(): string;
-
-
 }

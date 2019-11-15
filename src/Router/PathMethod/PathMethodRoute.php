@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\PathMethod;
 
-
 use Funivan\CabbageCore\Dispatcher\DispatcherInterface;
 use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Http\Response\ResponseInterface;

@@ -15,5 +15,4 @@ interface UrlInterface
      * @return string
      */
     public function build(): string;
-
 }

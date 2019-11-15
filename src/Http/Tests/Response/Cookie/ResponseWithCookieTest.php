@@ -14,7 +14,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class ResponseWithCookieTest extends TestCase
 {
-
     public function testResponseWithCookie(): void
     {
         $response = new ResponseWithCookie(
@@ -32,5 +31,4 @@ final class ResponseWithCookieTest extends TestCase
         self::assertCount(1, $lines);
         self::assertStringStartsNotWith('Set-Cookie: test=user;new_test=user2;/;expires=', $lines[0]);
     }
-
 }

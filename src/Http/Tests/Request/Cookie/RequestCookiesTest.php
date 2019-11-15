@@ -10,7 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 final class RequestCookiesTest extends TestCase
 {
-
     public function testCreateFromRaw() : void
     {
         self::assertSame(
@@ -29,5 +28,4 @@ final class RequestCookiesTest extends TestCase
     {
         RequestCookies::createFromRaw(['name' => 'UserName'])->get('login');
     }
-
 }

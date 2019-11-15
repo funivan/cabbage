@@ -102,5 +102,4 @@ class LocalPath implements PathInterface
     {
         return $path->assemble() === $this->assemble();
     }
-
 }

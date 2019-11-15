@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 final class MatchResultTest extends TestCase
 {
-
     public function testSuccessResult() : void
     {
         self::assertTrue(MatchResult::createSuccess()->matched());

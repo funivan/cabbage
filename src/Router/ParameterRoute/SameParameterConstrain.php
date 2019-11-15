@@ -52,5 +52,4 @@ class SameParameterConstrain implements ParameterConstrainInterface
     {
         return $this->name;
     }
-
 }

@@ -44,5 +44,4 @@ class Route implements RouteInterface
     {
         return $this->matcher->match($request);
     }
-
 }

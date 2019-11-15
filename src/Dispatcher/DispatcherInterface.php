@@ -18,5 +18,4 @@ interface DispatcherInterface
      * @return ResponseInterface
      */
     public function handle(RequestInterface $request): ResponseInterface;
-
 }

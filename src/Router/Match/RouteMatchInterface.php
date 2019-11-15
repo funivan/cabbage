@@ -19,5 +19,4 @@ interface RouteMatchInterface
      * @return MatchResultInterface
      */
     public function match(RequestInterface $request): MatchResultInterface;
-
 }

@@ -36,6 +36,4 @@ class StaticRouteMatch implements RouteMatchInterface
     {
         return $this->result;
     }
-
-
 }

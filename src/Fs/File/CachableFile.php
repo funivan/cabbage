@@ -108,5 +108,4 @@ class CachableFile implements FileInterface
     {
         return $this->original->move($path);
     }
-
 }

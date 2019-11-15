@@ -116,5 +116,4 @@ class Request implements RequestInterface
     {
         return $this->cookies;
     }
-
 }

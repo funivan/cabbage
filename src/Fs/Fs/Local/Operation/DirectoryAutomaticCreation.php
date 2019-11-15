@@ -26,5 +26,4 @@ class DirectoryAutomaticCreation implements DirectoryOperation
         }
         return $result;
     }
-
 }

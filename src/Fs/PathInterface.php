@@ -48,5 +48,4 @@ interface PathInterface
      * @return bool
      */
     public function equal(PathInterface $path): bool;
-
 }

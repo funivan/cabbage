@@ -11,5 +11,4 @@ use Exception;
  */
 final class WriteException extends Exception implements IOException
 {
-
 }

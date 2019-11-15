@@ -14,7 +14,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class PlainResponseTest extends TestCase
 {
-
     public function testContent(): void
     {
         $plainResponse = PlainResponse::create('Test');
@@ -22,5 +21,4 @@ final class PlainResponseTest extends TestCase
         (new BufferedBody($plainResponse->body(), $buffer))->send();
         self::assertSame('Test', $buffer->pop());
     }
-
 }

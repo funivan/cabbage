@@ -37,5 +37,4 @@ class ViewBody implements BodyInterface
     {
         echo $this->view->render();
     }
-
 }

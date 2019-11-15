@@ -83,5 +83,4 @@ class ParsedString implements ParsedStringInterface
     {
         return $this->input;
     }
-
 }

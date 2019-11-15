@@ -57,7 +57,8 @@ class RedirectResponse implements ResponseInterface
     final public function headers(): HeadersInterface
     {
         #@todo create UnCachableHeaders
-        return new Headers([
+        return new Headers(
+            [
                 new Field('Location', $this->url->build()),
                 new Field('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0'),
                 new Field('Pragma', 'no-cache'),
@@ -76,5 +77,4 @@ class RedirectResponse implements ResponseInterface
                 'Redirect to url: <a href="%1$s">%1$s</a>', $this->url->build())
         );
     }
-
 }

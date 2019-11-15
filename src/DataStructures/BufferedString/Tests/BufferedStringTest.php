@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class BufferedStringTest extends TestCase
 {
-
     public function testEmptyOnInitialization(): void
     {
         self::assertTrue((new BufferedString())->empty());
@@ -27,5 +26,4 @@ final class BufferedStringTest extends TestCase
                 ->empty()
         );
     }
-
 }

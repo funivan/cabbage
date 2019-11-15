@@ -72,5 +72,4 @@ class DummyAuthComponent implements AuthComponentInterface
     {
         $this->user = $user;
     }
-
 }

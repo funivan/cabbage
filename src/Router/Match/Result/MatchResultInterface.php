@@ -22,6 +22,4 @@ interface MatchResultInterface
      * @return ArrayObjectInterface
      */
     public function parameters(): ArrayObjectInterface;
-
-
 }

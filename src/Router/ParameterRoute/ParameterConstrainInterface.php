@@ -23,5 +23,4 @@ interface ParameterConstrainInterface
      * @return string
      */
     public function name(): string;
-
 }

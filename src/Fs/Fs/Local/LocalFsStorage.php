@@ -178,5 +178,4 @@ class LocalFsStorage implements FileStorageInterface
             );
         }
     }
-
 }

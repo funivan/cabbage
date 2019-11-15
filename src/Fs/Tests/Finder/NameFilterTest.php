@@ -10,7 +10,6 @@ use PHPUnit\Framework\TestCase;
 
 final class NameFilterTest extends TestCase
 {
-
     public function testMathSuccess() : void
     {
         $filter = new NameFilter(

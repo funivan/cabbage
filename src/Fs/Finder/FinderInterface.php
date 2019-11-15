@@ -16,5 +16,4 @@ interface FinderInterface
      * @return PathInterface[]|Iterator
      */
     public function items(): Iterator;
-
 }

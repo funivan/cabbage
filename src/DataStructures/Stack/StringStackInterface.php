@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\DataStructures\Stack;
 
-
 /**
  *
  */
@@ -32,5 +31,4 @@ interface StringStackInterface
      * @return bool
      */
     public function empty(): bool;
-
 }

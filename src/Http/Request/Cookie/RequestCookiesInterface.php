@@ -22,6 +22,4 @@ interface RequestCookiesInterface
      * @return RequestCookieInterface
      */
     public function get(string $name): RequestCookieInterface;
-
-
 }

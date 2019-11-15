@@ -54,5 +54,4 @@ class FilteredByTypeFilesList implements FinderInterface
             }
         }
     }
-
 }

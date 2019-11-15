@@ -9,7 +9,6 @@ namespace Funivan\CabbageCore\Fs;
  */
 interface FinderFilterInterface
 {
-
     public const TYPE_FILE = 1;
 
     public const TYPE_DIR = 2;
@@ -33,5 +32,4 @@ interface FinderFilterInterface
      * @return PathInterface
      */
     public function getPath(): PathInterface;
-
 }

@@ -12,7 +12,6 @@ use RuntimeException;
  */
 final class StringStackTest extends TestCase
 {
-
     public function testEmpty(): void
     {
         $stack = new StringStack();
@@ -43,6 +42,4 @@ final class StringStackTest extends TestCase
         self::assertSame('1', $stack->pop());
         $stack->pop();
     }
-
-
 }

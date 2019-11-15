@@ -28,5 +28,4 @@ interface ResponseInterface
      * @return BodyInterface
      */
     public function body(): BodyInterface;
-
 }

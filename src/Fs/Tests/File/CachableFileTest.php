@@ -15,7 +15,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class CachableFileTest extends TestCase
 {
-
     public function testRead(): void
     {
         $storage = new MemoryStorage();
@@ -97,5 +96,4 @@ final class CachableFileTest extends TestCase
             $storage->type(new LocalPath('/data/text.json'))
         );
     }
-
 }

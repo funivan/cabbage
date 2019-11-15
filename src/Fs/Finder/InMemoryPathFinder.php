@@ -75,5 +75,4 @@ class InMemoryPathFinder implements FinderInterface
             yield $prev;
         } while (!$prev->isRoot() and $prev = $prev->previous());
     }
-
 }

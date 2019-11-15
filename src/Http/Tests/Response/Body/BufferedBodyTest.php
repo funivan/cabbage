@@ -13,7 +13,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class BufferedBodyTest extends TestCase
 {
-
     public function testOutputToStackOnly(): void
     {
         $stack = new StringStack();

@@ -46,5 +46,4 @@ class PathRouteMatch implements RouteMatchInterface
         }
         return $result;
     }
-
 }

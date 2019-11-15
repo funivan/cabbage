@@ -21,5 +21,4 @@ class EmptyFinder implements FinderInterface
     {
         return new EmptyIterator();
     }
-
 }

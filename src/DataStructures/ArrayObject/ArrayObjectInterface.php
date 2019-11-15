@@ -15,5 +15,4 @@ interface ArrayObjectInterface
      * @return array
      */
     public function toArray(): array;
-
 }

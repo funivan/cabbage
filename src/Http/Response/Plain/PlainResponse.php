@@ -85,5 +85,4 @@ class PlainResponse implements ResponseInterface
     {
         return new PlainBody($this->content);
     }
-
 }

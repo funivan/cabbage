@@ -12,7 +12,6 @@ use PHPUnit\Framework\TestCase;
  */
 final class ResponseCookieTest extends TestCase
 {
-
     public function testSimple(): void
     {
         $cookie = ResponseCookie::create('test', 'user');
@@ -33,6 +32,4 @@ final class ResponseCookieTest extends TestCase
         $cookie = ResponseCookie::createExpires('TestCustomUserName', 'muValue', $time, []);
         self::assertSame('TestCustomUserName=muValue;expires=' . gmdate('D, d-M-Y H:i:s T', $time->getTimestamp()), $cookie->assemble());
     }
-
-
 }

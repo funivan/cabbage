@@ -15,5 +15,4 @@ interface ResponseCookieInterface
      * @return string
      */
     public function assemble(): string;
-
 }

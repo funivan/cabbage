@@ -48,6 +48,4 @@ class RequestCookie implements RequestCookieInterface
     {
         return $this->value;
     }
-
-
 }
