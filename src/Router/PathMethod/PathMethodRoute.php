@@ -47,7 +47,7 @@ class PathMethodRoute implements RouteInterface
     final public function match(RequestInterface $request): MatchResultInterface
     {
         $server = $request->server()->toArray();
-        $path = $server['PATH_INFO'] ?? null;
+        $path = $server['REQUEST_URI'] ?? null;
         $result = new FailedMatchResult();
         if ($path === $this->path) {
             $method = $server['REQUEST_METHOD'] ?? null;
