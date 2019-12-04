@@ -4,11 +4,11 @@ declare(strict_types=1);
 namespace Funivan\CabbageCore\Router\PathMethod;
 
 use Funivan\CabbageCore\Dispatcher\DispatcherInterface;
-use Funivan\CabbageCore\Http\Response\ResponseInterface;
 use Funivan\CabbageCore\Router\Match\Result\FailedMatchResult;
 use Funivan\CabbageCore\Router\Match\Result\MatchResult;
 use Funivan\CabbageCore\Router\Match\Result\MatchResultInterface;
 use Funivan\CabbageCore\Router\RouteInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 class PathMethodRoute implements RouteInterface

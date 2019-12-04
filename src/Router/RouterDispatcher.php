@@ -6,8 +6,8 @@ namespace Funivan\CabbageCore\Router;
 
 use Exception;
 use Funivan\CabbageCore\Dispatcher\DispatcherInterface;
-use Funivan\CabbageCore\Http\Response\ResponseInterface;
 use Funivan\CabbageCore\Router\Exception\RouteNotFoundException;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**

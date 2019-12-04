@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Funivan\CabbageCore\Router;
 
 use Funivan\CabbageCore\Dispatcher\DispatcherInterface;
-use Funivan\CabbageCore\Http\Response\ResponseInterface;
 use Funivan\CabbageCore\Router\Match\Result\MatchResultInterface;
 use Funivan\CabbageCore\Router\Match\RouteMatchInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**

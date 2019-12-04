@@ -4,19 +4,17 @@ declare(strict_types=1);
 namespace Funivan\CabbageCore\Router\Tests;
 
 use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
-use Funivan\CabbageCore\DataStructures\Stack\StringStack;
 use Funivan\CabbageCore\Dispatcher\DispatcherInterface;
-use Funivan\CabbageCore\Http\Response\Body\BufferedBody;
-use Funivan\CabbageCore\Http\Response\Plain\PlainResponse;
-use Funivan\CabbageCore\Http\Response\ResponseInterface;
 use Funivan\CabbageCore\Router\Match\Result\MatchResult;
 use Funivan\CabbageCore\Router\Match\Result\MatchResultInterface;
 use Funivan\CabbageCore\Router\Match\RouteMatchInterface;
 use Funivan\CabbageCore\Router\Route;
 use Funivan\CabbageCore\Router\RouterDispatcher;
+use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\ServerRequest;
 use GuzzleHttp\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
@@ -40,7 +38,9 @@ final class RouteDispatcherTest extends TestCase
         $dispatcher = new class implements DispatcherInterface {
             final public function handle(ServerRequestInterface $request): ResponseInterface
             {
-                return PlainResponse::create(
+                return new Response(
+                    200,
+                    [],
                     sprintf('Form Submitted: %s', $request->getAttribute('id'))
                 );
             }
@@ -54,9 +54,9 @@ final class RouteDispatcherTest extends TestCase
                     '{"formId":"123"}'
                 )
             );
-
-        $stack = new StringStack();
-        (new BufferedBody($response->body(), $stack))->send();
-        self::assertSame('Form Submitted: 123', $stack->pop());
+        self::assertSame(
+            'Form Submitted: 123',
+            $response->getBody()->getContents()
+        );
     }
 }
