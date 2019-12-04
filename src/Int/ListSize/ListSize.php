@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Int\ListSize;
 
-use Funivan\CabbageCore\Int\IntObject\IntInterface;
-use IteratorAggregate;
 use function count;
+use Funivan\CabbageCore\Int\IntObject\IntInterface;
 use function iterator_to_array;
+use IteratorAggregate;
 
 class ListSize implements IntInterface
 {

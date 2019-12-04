@@ -35,7 +35,6 @@ final class BlackHoleStorageTest extends TestCase
                     new LocalPath('/')
                 )->items()
             )
-
         );
     }
 

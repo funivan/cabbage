@@ -6,8 +6,8 @@ namespace Funivan\CabbageCore\String\StringObject\Random;
 
 use Funivan\CabbageCore\String\StringList\StringListInterface;
 use Funivan\CabbageCore\String\StringObject\StringInterface;
-use RuntimeException;
 use function iterator_to_array;
+use RuntimeException;
 
 class RandomString implements StringInterface
 {

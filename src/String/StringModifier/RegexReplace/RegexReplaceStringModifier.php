@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Funivan\CabbageCore\String\StringModifier\RegexReplace;
 
 use Funivan\CabbageCore\String\StringModifier\StringModifierInterface;
-use RuntimeException;
 use function is_string;
+use RuntimeException;
 
 class RegexReplaceStringModifier implements StringModifierInterface
 {

@@ -2,8 +2,8 @@
 
 namespace Funivan\CabbageCore\Float\FloatList;
 
-use PHPUnit\Framework\TestCase;
 use function iterator_to_array;
+use PHPUnit\Framework\TestCase;
 
 final class PredefinedFloatListTest extends TestCase
 {
