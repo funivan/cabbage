@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Dispatcher;
 
-use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Http\Response\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  *
@@ -29,10 +29,10 @@ class StaticDispatcher implements DispatcherInterface
 
 
     /**
-     * @param RequestInterface $request
+     * @param ServerRequestInterface $request
      * @return ResponseInterface
      */
-    final public function handle(RequestInterface $request): ResponseInterface
+    final public function handle(ServerRequestInterface $request): ResponseInterface
     {
         return $this->response;
     }

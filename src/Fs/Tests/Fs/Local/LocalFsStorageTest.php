@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 final class LocalFsStorageTest extends TestCase
 {
-    public function testWriteRead() : void
+    public function testWriteRead(): void
     {
         $fs = LocalFsStorage::create(new LocalPath(sys_get_temp_dir()));
         $fs->write(new LocalPath('test.txt'), 'data-file');
@@ -22,7 +22,7 @@ final class LocalFsStorageTest extends TestCase
     }
 
 
-    public function testMeta() : void
+    public function testMeta(): void
     {
         $fs = LocalFsStorage::create(new LocalPath(sys_get_temp_dir()));
         $path = new LocalPath('custom-file.json');
@@ -34,7 +34,7 @@ final class LocalFsStorageTest extends TestCase
     }
 
 
-    public function testFind() : void
+    public function testFind(): void
     {
         $fs = LocalFsStorage::createWithDirectoryCheck(
             new LocalPath(sys_get_temp_dir()),

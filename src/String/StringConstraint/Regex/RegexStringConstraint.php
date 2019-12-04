@@ -21,7 +21,7 @@ class RegexStringConstraint implements StringConstraintInterface
     }
 
 
-    public function valid(string $string): bool
+    final public function valid(string $string): bool
     {
         return preg_match($this->regex, $string) === 1;
     }

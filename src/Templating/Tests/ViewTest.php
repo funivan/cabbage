@@ -62,7 +62,7 @@ final class ViewTest extends TestCase
         $view->render();
     }
 
-    private static function assertViewContent(string $content, ViewInterface $view) : void
+    private static function assertViewContent(string $content, ViewInterface $view): void
     {
         self::assertSame(
             $content,

@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Funivan\CabbageCore\Router;
 
 use Funivan\CabbageCore\Dispatcher\DispatcherInterface;
-use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Http\Response\ResponseInterface;
 use Funivan\CabbageCore\Router\Match\Result\MatchResultInterface;
 use Funivan\CabbageCore\Router\Match\RouteMatchInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  *
@@ -34,13 +34,13 @@ class Route implements RouteInterface
     }
 
 
-    final public function handle(RequestInterface $request): ResponseInterface
+    final public function handle(ServerRequestInterface $request): ResponseInterface
     {
         return $this->dispatcher->handle($request);
     }
 
 
-    final public function match(RequestInterface $request): MatchResultInterface
+    final public function match(ServerRequestInterface $request): MatchResultInterface
     {
         return $this->matcher->match($request);
     }

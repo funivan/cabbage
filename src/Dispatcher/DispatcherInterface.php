@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Dispatcher;
 
-use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Http\Response\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * Convert Request to the Response
@@ -13,9 +13,5 @@ use Funivan\CabbageCore\Http\Response\ResponseInterface;
 interface DispatcherInterface
 {
 
-    /**
-     * @param RequestInterface $request
-     * @return ResponseInterface
-     */
-    public function handle(RequestInterface $request): ResponseInterface;
+    public function handle(ServerRequestInterface $request): ResponseInterface;
 }

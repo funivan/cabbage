@@ -6,9 +6,6 @@ namespace Funivan\CabbageCore\Router\Tests;
 use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
 use Funivan\CabbageCore\DataStructures\Stack\StringStack;
 use Funivan\CabbageCore\Dispatcher\DispatcherInterface;
-use Funivan\CabbageCore\Http\Request\Cookie\RequestCookies;
-use Funivan\CabbageCore\Http\Request\Request;
-use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Http\Response\Body\BufferedBody;
 use Funivan\CabbageCore\Http\Response\Plain\PlainResponse;
 use Funivan\CabbageCore\Http\Response\ResponseInterface;
@@ -17,7 +14,10 @@ use Funivan\CabbageCore\Router\Match\Result\MatchResultInterface;
 use Funivan\CabbageCore\Router\Match\RouteMatchInterface;
 use Funivan\CabbageCore\Router\Route;
 use Funivan\CabbageCore\Router\RouterDispatcher;
+use GuzzleHttp\Psr7\ServerRequest;
+use GuzzleHttp\Psr7\Uri;
 use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * @codeCoverageIgnore
@@ -27,33 +27,33 @@ final class RouteDispatcherTest extends TestCase
     public function testPassCustomParametersOnMatch(): void
     {
         $routeMatch = new class implements RouteMatchInterface {
-            final public function match(RequestInterface $request): MatchResultInterface
+            final public function match(ServerRequestInterface $request): MatchResultInterface
             {
+                /** @noinspection PhpComposerExtensionStubsInspection */
+                $data = (array)json_decode($request->getBody()->getContents(), true);
                 return MatchResult::create(
                     true,
-                    new ArrayObject(['id' => $request->get()->toArray()['formId']])
+                    new ArrayObject(['id' => $data['formId']])
                 );
             }
         };
         $dispatcher = new class implements DispatcherInterface {
-            final public function handle(RequestInterface $request): ResponseInterface
+            final public function handle(ServerRequestInterface $request): ResponseInterface
             {
                 return PlainResponse::create(
-                    sprintf('Form Submitted: %s', $request->parameters()->toArray()['id'])
+                    sprintf('Form Submitted: %s', $request->getAttribute('id'))
                 );
             }
         };
-
-        $routeDispatcher = new RouterDispatcher([new Route($routeMatch, $dispatcher)]);
-        $response = $routeDispatcher->handle(
-            new Request(
-                new ArrayObject(['formId' => '123']),
-                new ArrayObject([]),
-                new ArrayObject([]),
-                new ArrayObject([]),
-                RequestCookies::create([])
-            )
-        );
+        $response = (new RouterDispatcher([new Route($routeMatch, $dispatcher)]))
+            ->handle(
+                new ServerRequest(
+                    'POST',
+                    new Uri('/'),
+                    [],
+                    '{"formId":"123"}'
+                )
+            );
 
         $stack = new StringStack();
         (new BufferedBody($response->body(), $stack))->send();

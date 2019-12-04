@@ -61,7 +61,7 @@ final class CachableFileTest extends TestCase
     }
 
 
-    public function testForwardMeta() : void
+    public function testForwardMeta(): void
     {
         self::assertSame(
             'json',
@@ -72,7 +72,7 @@ final class CachableFileTest extends TestCase
     }
 
 
-    public function testForwardPath() : void
+    public function testForwardPath(): void
     {
         self::assertSame(
             '/my/custom/user.txt',
@@ -83,7 +83,7 @@ final class CachableFileTest extends TestCase
     }
 
 
-    public function testMove() : void
+    public function testMove(): void
     {
         $storage = new MemoryStorage();
         $file = new CachableFile(

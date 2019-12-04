@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 final class RandomStringTest extends TestCase
 {
-    public function testValue() : void
+    public function testValue(): void
     {
         self::assertTrue(
             in_array(

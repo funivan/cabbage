@@ -6,9 +6,9 @@ namespace Funivan\CabbageCore\Router;
 
 use Exception;
 use Funivan\CabbageCore\Dispatcher\DispatcherInterface;
-use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Http\Response\ResponseInterface;
 use Funivan\CabbageCore\Router\Exception\RouteNotFoundException;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * Iterate over all routes
@@ -36,16 +36,18 @@ class RouterDispatcher implements DispatcherInterface
 
     /**
      *
-     * @param RequestInterface $request
+     * @param ServerRequestInterface $request
      * @return ResponseInterface
      * @throws Exception
      */
-    final public function handle(RequestInterface $request): ResponseInterface
+    final public function handle(ServerRequestInterface $request): ResponseInterface
     {
         foreach ($this->routes as $route) {
             $matchResult = $route->match($request);
             if ($matchResult->matched()) {
-                $request = $request->withParameters($matchResult->parameters());
+                foreach ($matchResult->parameters()->toArray() as $name => $value) {
+                    $request = $request->withAttribute($name, $value);
+                }
                 return $route->handle($request);
             }
         }

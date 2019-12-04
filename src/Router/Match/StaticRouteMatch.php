@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\Match;
 
-use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Router\Match\Result\MatchResultInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  *
@@ -29,10 +29,10 @@ class StaticRouteMatch implements RouteMatchInterface
 
 
     /**
-     * @param RequestInterface $request
+     * @param ServerRequestInterface $request
      * @return MatchResultInterface
      */
-    final public function match(RequestInterface $request): MatchResultInterface
+    final public function match(ServerRequestInterface $request): MatchResultInterface
     {
         return $this->result;
     }

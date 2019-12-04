@@ -24,19 +24,19 @@ final class HeadersTest extends TestCase
     }
 
 
-    public function testHasFailure() : void
+    public function testHasFailure(): void
     {
         self::assertFalse((new Headers([]))->has('Set-Cookie'));
     }
 
 
-    public function testHasSuccess() : void
+    public function testHasSuccess(): void
     {
         self::assertTrue((new Headers([new Field('Location', '/')]))->has('Location'));
     }
 
 
-    public function testGet() : void
+    public function testGet(): void
     {
         self::assertSame(
             '/test.com',
@@ -45,7 +45,7 @@ final class HeadersTest extends TestCase
     }
 
 
-    public function testOverwriteExistingVariable() : void
+    public function testOverwriteExistingVariable(): void
     {
         $this->expectException(OverwriteHeaderFieldException::class);
         $this->expectExceptionMessage('Header field Location is already defined');

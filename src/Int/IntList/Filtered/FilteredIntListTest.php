@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 final class FilteredIntListTest extends TestCase
 {
-    public function testAll() : void
+    public function testAll(): void
     {
         self::assertSame(
             [4, 5, 6],

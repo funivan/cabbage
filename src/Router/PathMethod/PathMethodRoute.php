@@ -4,12 +4,12 @@ declare(strict_types=1);
 namespace Funivan\CabbageCore\Router\PathMethod;
 
 use Funivan\CabbageCore\Dispatcher\DispatcherInterface;
-use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Http\Response\ResponseInterface;
 use Funivan\CabbageCore\Router\Match\Result\FailedMatchResult;
 use Funivan\CabbageCore\Router\Match\Result\MatchResult;
 use Funivan\CabbageCore\Router\Match\Result\MatchResultInterface;
 use Funivan\CabbageCore\Router\RouteInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 class PathMethodRoute implements RouteInterface
 {
@@ -36,7 +36,7 @@ class PathMethodRoute implements RouteInterface
     /**
      * @inheritDoc
      */
-    final public function handle(RequestInterface $request): ResponseInterface
+    final public function handle(ServerRequestInterface $request): ResponseInterface
     {
         return $this->next->handle($request);
     }
@@ -44,20 +44,12 @@ class PathMethodRoute implements RouteInterface
     /**
      * @inheritDoc
      */
-    final public function match(RequestInterface $request): MatchResultInterface
+    final public function match(ServerRequestInterface $request): MatchResultInterface
     {
-        $server = $request->server()->toArray();
-        $path = (string)($server['REQUEST_URI'] ?? '');
-        if (false !== $pos = strpos($path, '?')) {
-            $path = substr($path, 0, $pos);
-        }
-        $path = rawurldecode($path);
+        $path = $request->getUri()->getPath();
         $result = new FailedMatchResult();
-        if ($path === $this->path) {
-            $method = $server['REQUEST_METHOD'] ?? null;
-            if ($method === $this->method) {
-                $result = MatchResult::createSuccess();
-            }
+        if ($this->path === $path && $this->method === $request->getMethod()) {
+            $result = MatchResult::createSuccess();
         }
         return $result;
     }

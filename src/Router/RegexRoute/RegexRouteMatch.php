@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Funivan\CabbageCore\Router\RegexRoute;
 
 use Funivan\CabbageCore\DataStructures\ArrayObject\ArrayObject;
-use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Router\Match\Result\FailedMatchResult;
 use Funivan\CabbageCore\Router\Match\Result\MatchResult;
 use Funivan\CabbageCore\Router\Match\Result\MatchResultInterface;
 use Funivan\CabbageCore\Router\Match\RouteMatchInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  *
@@ -33,12 +33,12 @@ class RegexRouteMatch implements RouteMatchInterface
 
 
     /**
-     * @param RequestInterface $request
+     * @param ServerRequestInterface $request
      * @return MatchResultInterface
      */
-    final public function match(RequestInterface $request): MatchResultInterface
+    final public function match(ServerRequestInterface $request): MatchResultInterface
     {
-        $path = (string)($request->server()->toArray()['PATH_INFO'] ?? '');
+        $path = $request->getUri()->getPath();
         $matched = (preg_match('!^' . $this->regex . '$!', $path, $params) === 1);
         if ($matched) {
             foreach ((array)$params as $index => $param) {

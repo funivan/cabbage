@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Dispatcher;
 
-use Funivan\CabbageCore\Http\Request\Request;
+use Psr\Http\Message\ServerRequestInterface;
 
 class App implements AppInterface
 {
@@ -22,7 +22,7 @@ class App implements AppInterface
     }
 
 
-    final public function run(Request $request): void
+    final public function run(ServerRequestInterface $request): void
     {
         $response = $this->dispatcher->handle($request);
         $status = $response->status();

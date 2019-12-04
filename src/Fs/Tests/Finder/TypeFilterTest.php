@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 final class TypeFilterTest extends TestCase
 {
-    public function testDirectory() : void
+    public function testDirectory(): void
     {
         $fs = new MemoryStorage();
         $fs->write(new LocalPath('/test.php'), 'test');

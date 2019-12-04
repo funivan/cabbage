@@ -44,7 +44,7 @@ final class BlackHoleStorageTest extends TestCase
      * @expectedException BadMethodCallException
      * @expectedExceptionMessage "Read" operation is not supported by this adapter
      */
-    public function testRead() : void
+    public function testRead(): void
     {
         (new BlackHoleStorage())->read(new LocalPath('/document.txt'));
     }

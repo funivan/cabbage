@@ -7,7 +7,7 @@ use function iterator_to_array;
 
 final class PredefinedFloatListTest extends TestCase
 {
-    public function testAll() : void
+    public function testAll(): void
     {
         self::assertSame(
             [1.1, 0.0],

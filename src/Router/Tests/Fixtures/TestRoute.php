@@ -5,10 +5,10 @@ declare(strict_types=1);
 
 namespace Funivan\CabbageCore\Router\Tests\Fixtures;
 
-use Funivan\CabbageCore\Http\Request\RequestInterface;
 use Funivan\CabbageCore\Http\Response\ResponseInterface;
 use Funivan\CabbageCore\Router\Match\Result\MatchResultInterface;
 use Funivan\CabbageCore\Router\RouteInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * @codeCoverageIgnore
@@ -39,20 +39,20 @@ class TestRoute implements RouteInterface
 
 
     /**
-     * @param RequestInterface $request
+     * @param ServerRequestInterface $request
      * @return ResponseInterface
      */
-    final public function handle(RequestInterface $request): ResponseInterface
+    final public function handle(ServerRequestInterface $request): ResponseInterface
     {
         return $this->response;
     }
 
 
     /**
-     * @param RequestInterface $request
+     * @param ServerRequestInterface $request
      * @return MatchResultInterface
      */
-    final public function match(RequestInterface $request): MatchResultInterface
+    final public function match(ServerRequestInterface $request): MatchResultInterface
     {
         return $this->matchResult;
     }
