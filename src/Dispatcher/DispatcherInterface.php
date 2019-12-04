@@ -12,6 +12,5 @@ use Psr\Http\Message\ServerRequestInterface;
  */
 interface DispatcherInterface
 {
-
     public function handle(ServerRequestInterface $request): ResponseInterface;
 }

@@ -11,7 +11,7 @@ final class RandomStringTest extends TestCase
     {
         self::assertTrue(
             in_array(
-                (new RandomString((new PredefinedStringList('name', 'id'))))->toString(),
+                (new RandomString((new PredefinedStringList('name', 'id'))))->__toString(),
                 ['name', 'id'],
                 true
             )

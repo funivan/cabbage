@@ -21,7 +21,7 @@ class RandomString implements StringInterface
         $this->list = $list;
     }
 
-    final public function toString(): string
+    final public function __toString(): string
     {
         $items = iterator_to_array($this->list);
         shuffle($items);

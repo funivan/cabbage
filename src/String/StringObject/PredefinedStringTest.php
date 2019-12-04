@@ -10,7 +10,7 @@ final class PredefinedStringTest extends TestCase
     {
         self::assertSame(
             'val',
-            (new PredefinedString('val'))->toString()
+            (new PredefinedString('val'))->__toString()
         );
     }
 }
