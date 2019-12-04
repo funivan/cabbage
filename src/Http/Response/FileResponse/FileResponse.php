@@ -13,7 +13,7 @@ use Funivan\CabbageCore\Http\Response\Plain\PlainBody;
 use Funivan\CabbageCore\Http\Response\ResponseInterface;
 use Funivan\CabbageCore\Http\Response\Status\ResponseStatus;
 use Funivan\CabbageCore\Http\Response\StatusInterface;
-use Mimey\MimeTypes;
+use function GuzzleHttp\Psr7\mimetype_from_extension;
 
 /**
  *
@@ -87,7 +87,7 @@ class FileResponse implements ResponseInterface
     final public function headers(): HeadersInterface
     {
         return (new Headers([
-            new Field('Content-Type', (string)(new MimeTypes)->getMimeType($this->file->meta('extension'))),
+            new Field('Content-Type', (string)mimetype_from_extension($this->file->meta('extension'))),
         ]))->merge($this->headers);
     }
 
@@ -95,7 +95,6 @@ class FileResponse implements ResponseInterface
     /**
      * @return BodyInterface
      * @todo make more effective image download
-     *
      */
     final public function body(): BodyInterface
     {
